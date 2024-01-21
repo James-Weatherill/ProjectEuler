@@ -6,10 +6,6 @@ startTime = time()
 
 ########################################
 
-
-
-########################################
-
 def triangleNums(inputNum):
     n = int(inputNum)
     return str((n*(n+1))//2)
