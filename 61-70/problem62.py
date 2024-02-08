@@ -8,14 +8,15 @@ from time import time
 
 startTime = time()
 
-numberOfPermutations = 6
-
 allNums = {}
 
 counter = 1
 
+numberOfPermutations = 10
+toThePowerOf = 3
+
 while True:
-    counterCube = counter**3
+    counterCube = counter**toThePowerOf
     sortedCounterCube = "".join(sorted(list(str(counterCube))))
 
     if sortedCounterCube in allNums:
@@ -30,7 +31,7 @@ while True:
     counter += 1
 
 isolatedList = allNums[sortedCounterCube][1]
-finalStr = "\n".join([f"{i+1}) {round(isolatedList[i]**(1/3))} -> {str(isolatedList[i])}" for i in range(len(isolatedList))])
+finalStr = "\n".join([f"{str(i+1).zfill(len(str(len(isolatedList))))}) {round(isolatedList[i]**(1/3))} -> {str(isolatedList[i])}" for i in range(len(isolatedList))])
 
 print(f"\nAll possible permutations:\n\n{finalStr}")
 
