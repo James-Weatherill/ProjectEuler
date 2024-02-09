@@ -33,7 +33,7 @@ for num in range(2, 10_001):
         three1 = tempList[0:3]
         three2 = tempList[3:6]
         three3 = tempList[6:9]
-        one1 = tempList[0]
+        one1 = tempList[0] this is a test
         one2 = tempList[1]
         one3 = tempList[2]
         one4 = tempList[3]
