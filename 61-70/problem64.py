@@ -28,7 +28,7 @@ for num in range(2, 10_001):
             fraction -= leadingDigitOfFrac
             fraction = fraction**(-1)
 
-        five1 = tempList[0:5] git test
+        five1 = tempList[0:5]
         five2 = tempList[5:10]
         three1 = tempList[0:3]
         three2 = tempList[3:6]
