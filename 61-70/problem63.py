@@ -9,29 +9,18 @@ from time import time
 startTime = time()
 
 counter = 0
-on = True
 
-curNum = 1
-power = 1
+for i in range(1,10):
+    power = 1
+    while power<22:
+        numPowStr = str(i**power)
+        if len(numPowStr) == power:
+            counter += 1
+            power += 1
+        else:
+            power += 1
 
-while True:
-
-    couPowStr = str(counter**power)
-
-    if len(couPowStr) == power and not on:
-        on = True
-        counter += 1
-        power += 1
-    elif len(couPowStr) != power and on:
-        on = False
-        power = 1
-        curNum = 1
-    elif len(couPowStr) == power and on:
-        counter += 1
-        power += 1
-
-    if counter%1_000 == 0:
-        print(counter)
+print(counter)
 
 finishTime = time()
 
