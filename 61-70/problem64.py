@@ -9,29 +9,49 @@ from math import sqrt
 
 startTime = time()
 
-fullList = []
+ans = 0
 
-num = 23
-numerator = 1
+for num in range(2, 10_001):
 
-truncNum = int(sqrt(num))
-denominator = sqrt(num)-truncNum
-prevTerm = numerator/denominator
+    if sqrt(num)%1!=0:
 
-for i in range(1, 8):
+        tempList = []
 
-    flippedDenom = (-1)*(denominator-sqrt(num))+sqrt(num)
+        rootOfNum = sqrt(num)
+        leadingDigit = int(rootOfNum)
 
-    numerator = numerator*flippedDenom
-    denominator = denominator*flippedDenom
-    tempTerm = numerator/denominator
+        fraction = 1/(rootOfNum-leadingDigit)
 
-    separateInt = int(tempTerm)
-    fullList.append(separateInt)
+        for i in range(10):
+            leadingDigitOfFrac = int(fraction)
+            tempList.append(leadingDigitOfFrac)
+            fraction -= leadingDigitOfFrac
+            fraction = fraction**(-1)
 
-    prevTerm = tempTerm-separateInt
+        five1 = tempList[0:5]
+        five2 = tempList[5:10]
+        three1 = tempList[0:3]
+        three2 = tempList[3:6]
+        three3 = tempList[6:9]
+        one1 = tempList[0]
+        one2 = tempList[1]
+        one3 = tempList[2]
+        one4 = tempList[3]
+        one5 = tempList[4]
+        one6 = tempList[5]
+        one7 = tempList[6]
+        one8 = tempList[7]
+        one9 = tempList[8]
+        one10 = tempList[9]
 
-print(fullList)
+        if five1 == five2:
+            ans += 1
+        elif three1 == three2 and three2 == three3:
+            ans +=1
+        elif one1 == one2 and one2 == one3 and one3 == one4 and one4 == one5 and one5 == one6 and one6 == one7 and one7 == one8 and one8 == one9 and one9 == one10:
+            ans += 1
+
+print(ans)
 
 finishTime = time()
 
