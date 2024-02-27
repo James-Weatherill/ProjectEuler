@@ -11,7 +11,7 @@ startTime = time()
 eList = []
 counter = 1
 for i in range(33):
-    eList = eList + [1, counter * 2, 1]
+    eList += [1, counter * 2, 1]
     counter += 1
 
 ansList = [[1, eList[-1]]]
