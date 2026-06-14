@@ -21,18 +21,13 @@ def is_prime(val):
 
     return True
 
-# 2, 3, 5, 7, 11
-num = 11
-counter = 4
+cur_total = 2 + 3 + 5 + 7
 
-while True:
-    if is_prime(num):
-        counter += 1
-    if counter == 10_001:
-        break
-    num += 2
+for prime in range(11, 2_000_000, 2):
+    if is_prime(prime):
+        cur_total += prime
 
-print(f"\nThe 10,001st prime is: {num}")
+print(f"\nThe sum of all primes below 2,000,000, is: {cur_total}")
 
 ########################################
 
