@@ -7,7 +7,7 @@ start_time = time()
 
 ########################################
 
-assets_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "assets")
+assets_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets")
 file_path = os.path.join(assets_path, "0013_data.txt")
 
 with open(file_path, "r+") as file:
